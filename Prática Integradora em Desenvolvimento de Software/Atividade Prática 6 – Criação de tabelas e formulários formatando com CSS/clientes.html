@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Cliente</title>
+    <style>
+      /* Resetando margens e preenchimentos padrões */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Estilo geral da página */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Estilo do elemento main */
+      main {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 50%; /* Tamanho do formulário ajustado para metade da página */
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Espaçamento entre os elementos do formulário */
+        align-items: flex-start;
+      }
+
+      /* Título do formulário */
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Estilo dos rótulos */
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 16px;
+        color: #333;
+        font-weight: bold;
+      }
+
+      /* Estilo dos campos de entrada */
+      input[type="text"],
+      input[type="date"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      /* Estilo da área de texto (textarea) */
+      textarea {
+        height: 100px;
+        resize: none;
+      }
+
+      /* Estilo do botão */
+      button {
+        width: auto;
+        padding: 12px 25px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        align-self: flex-end; /* Faz o botão alinhar à direita */
+      }
+
+      /* Efeito de hover no botão */
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Cadastro de Cliente</h1>
+      <form action="#" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required />
+
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" id="sobrenome" name="sobrenome" required />
+
+        <label for="data-nascimento">Data de Nascimento:</label>
+        <input
+          type="date"
+          id="data-nascimento"
+          name="data-nascimento"
+          required
+        />
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="endereco">Endereço:</label>
+        <textarea id="endereco" name="endereco" required></textarea>
+
+        <button type="submit">Cadastrar</button>
+      </form>
+    </main>
+  </body>
+</html>
