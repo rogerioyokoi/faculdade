@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade Prática 10 – Criação e execução de funções em JavaScript</title>
+
+    <style>
+      /* Material Design Inspired */
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      h1, h2, h3 {
+        color: #212121;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-top: 40px;
+      }
+
+      section {
+        background-color: #ffffff;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      header h2 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        color: #2196F3;
+      }
+
+      p {
+        font-size: 1em;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      ol {
+        list-style-position: inside;
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      code {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #f1f1f1;
+        padding: 2px 5px;
+        border-radius: 4px;
+      }
+
+      strong {
+        font-weight: bold;
+      }
+
+      details {
+        background-color: #eeeeee;
+        border-radius: 8px;
+        padding: 10px;
+        margin-top: 20px;
+      }
+
+      details summary {
+        font-size: 1.2em;
+        cursor: pointer;
+        font-weight: bold;
+        color: #4CAF50;
+        padding: 10px;
+        border-radius: 4px;
+        background-color: #dce775;
+      }
+
+      details summary:hover {
+        background-color: #aed581;
+      }
+
+      details p, details ol, details ul {
+        margin-top: 10px;
+        font-size: 1em;
+        line-height: 1.6;
+      }
+
+      /* Button Style */
+      button {
+        background-color: #2196F3;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+
+      button:hover {
+        background-color: #1976D2;
+      }
+
+      /* Form Input Styling */
+      input[type="text"] {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 10px;
+      }
+
+      input[type="text"]:focus {
+        border-color: #2196F3;
+        outline: none;
+      }
+
+      div.form {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 16px;
+      }
+
+      div.form-section {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+      }
+
+      /* Result Display */
+      .result {
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #f1f8e9;
+        border: 1px solid #8bc34a;
+        border-radius: 4px;
+        font-size: 1.2em;
+        color: #388e3c;
+      }
+
+      .error {
+        background-color: #ffebee;
+        border: 1px solid #f44336;
+        color: #d32f2f;
+      }
+    </style>
+
+  </head>
+  <body>
+      <h1>Objetivos: criar funções em JavaScript e executá-las.</h1>
+
+      <section>
+        <header>
+          <h2>Função em JavaScript</h2>
+        </header>
+        <p>O código para a função que valida o nome e sobrenome é:</p>
+        <pre>
+          <code>
+            function obterNomeCompleto(nome, sobrenome) {
+              if (nome === "" && sobrenome === "") {
+                return "Nome e sobrenome inválidos!";
+              } else if (nome === "") {
+                return "Nome inválido!";
+              } else if (sobrenome === "") {
+                return "Sobrenome inválido!";
+              } else {
+                return nome + " " + sobrenome;
+              }
+            }
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <details>
+          <summary>Guia de Execução Interativa</summary>
+
+          <!-- Formulário para interação -->
+          <form id="nameForm">
+            <div class="form">
+              <div class="form-section">
+                <label for="firstName">Nome:</label>
+                <input type="text" id="firstName" name="firstName" />
+              </div>
+              <div class="form-section">
+                <label for="lastName">Sobrenome:</label>
+                <input type="text" id="lastName" name="lastName" />
+              </div>
+
+              <button type="submit">Exibir Nome Completo</button>
+            </div>
+          </form>
+
+          <!-- Exibição do resultado -->
+          <div id="result" class="result" style="display:none;"></div>
+        </details>
+      </section>
+
+
+      <section>
+        <details>
+          <summary>Guia de Execução</summary>
+          <h2>Passo a Passo</h2>
+
+          <p><strong>Objetivo</strong>: Você irá rodar um arquivo HTML que utiliza JavaScript para validar e exibir o nome completo de um cliente. O código verifica se o nome e o sobrenome estão preenchidos corretamente e, se não, retorna uma mensagem de erro.</p>
+
+          <h3>Passo a Passo</h3>
+
+          <ol>
+              <li><strong>Baixar ou Obter o Arquivo</strong>
+                  <p>Se você já possui o arquivo <code>index.html</code> (conforme descrito no exercício), basta passar para o próximo passo. Caso contrário, <em>peça para alguém te fornecer</em> o arquivo ou <em>faça o download de um arquivo pronto</em> que contenha o código mencionado anteriormente.</p>
+              </li>
+
+              <li><strong>Abrir o Arquivo no Navegador</strong>
+                  <p>Localize o arquivo <code>index.html</code> em sua pasta ou no local onde ele foi salvo. Clique duas vezes sobre o arquivo para abrir automaticamente no seu navegador de internet preferido (Google Chrome, Firefox, Microsoft Edge, etc.). O navegador irá carregar a página e você verá um título na tela, algo como <strong>"Exemplo de Função JavaScript"</strong>.</p>
+              </li>
+
+              <li><strong>Verificando o Resultado no Console do Navegador</strong>
+                  <p>Para visualizar o resultado do código JavaScript, abra o console de desenvolvedor do seu navegador:</p>
+                  <ul>
+                      <li><strong>Google Chrome:</strong> Pressione <code>Ctrl + Shift + I</code> ou <code>F12</code>, e depois clique na aba <strong>"Console"</strong>.</li>
+                      <li><strong>Firefox:</strong> Pressione <code>Ctrl + Shift + I</code> ou <code>F12</code>, e depois clique na aba <strong>"Console"</strong>.</li>
+                      <li><strong>Microsoft Edge:</strong> Pressione <code>Ctrl + Shift + I</code> ou <code>F12</code>, e depois clique na aba <strong>"Console"</strong>.</li>
+                  </ul>
+                  <p>Depois de abrir o console, você verá mensagens sendo exibidas. O código já contém alguns testes de validação. As mensagens esperadas são:</p>
+                  <ul>
+                      <li><strong>"João Silva"</strong> (caso o nome e sobrenome sejam válidos).</li>
+                      <li><strong>"Nome inválido!"</strong> (caso o nome esteja vazio).</li>
+                      <li><strong>"Sobrenome inválido!"</strong> (caso o sobrenome esteja vazio).</li>
+                  </ul>
+              </li>
+
+              <li><strong>Testando com Variações</strong>
+                  <p>Caso você queira testar outros cenários:</p>
+                  <ul>
+                      <li><strong>Nome inválido</strong>: No arquivo HTML, altere o nome para uma string vazia (<code>""</code>), como no código abaixo:
+                          <pre><code>console.log(obterNomeCompleto("", "Silva"));</code></pre>
+                      </li>
+                      <li><strong>Sobrenome inválido</strong>: No arquivo HTML, altere o sobrenome para uma string vazia (<code>""</code>), como no código abaixo:
+                          <pre><code>console.log(obterNomeCompleto("João", ""));</code></pre>
+                      </li>
+                  </ul>
+                  <p>Salve o arquivo depois das mudanças e atualize a página no navegador (pressione <code>Ctrl + R</code> ou <code>F5</code> para atualizar a página). O console agora exibirá o resultado da nova execução.</p>
+              </li>
+          </ol>
+        </details>
+      </section>
+
+      <section>
+        <h2>Conclusão</h2>
+        <p>
+          Agora você é capaz de validar entradas de nome e sobrenome e retorná-las ou emitir mensagens de erro caso os dados sejam inválidos. Isso é fundamental para garantir a integridade dos dados fornecidos pelo usuário.
+        </p>
+      </section>
+
+    <script>
+      function obterNomeCompleto(nome, sobrenome) {
+        if (!nome) {
+          return "Nome inválido!";
+        }
+        if (!sobrenome) {
+          return "Sobrenome inválido!";
+        }
+        return nome + " " + sobrenome;
+      }
+
+      // Testando com valores válidos
+      console.log(obterNomeCompleto("João", "Silva")); // Deve exibir "João Silva"
+
+      // Testando com nome inválido
+      console.log(obterNomeCompleto("", "Silva")); // Deve exibir "Nome inválido!"
+
+      // Testando com sobrenome inválido
+      console.log(obterNomeCompleto("João", "")); // Deve exibir "Sobrenome inválido!"
+
+      // Interação com o formulário
+      document.getElementById("nameForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const resultDiv = document.getElementById("result");
+
+        const fullName = obterNomeCompleto(firstName, lastName);
+
+        // Exibir resultado
+        resultDiv.textContent = fullName;
+
+        // Exibir mensagem de erro ou sucesso
+        if (fullName.includes("inválido")) {
+          resultDiv.classList.add("error");
+        } else {
+          resultDiv.classList.remove("error");
+        }
+
+        resultDiv.style.display = "block";
+      });
+    </script>
+  </body>
+</html>
